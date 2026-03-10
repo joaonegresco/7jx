@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banco Simples</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🏦 Banco Simples</h1>
+
+<div class="saldo-box">
+<p>Saldo: R$ <span id="saldo">0.00</span></p>
+<p>Investimento: R$ <span id="investimento">0.00</span></p>
+</div>
+
+<label>Digite um valor:</label>
+<input type="number" id="valor" placeholder="Ex: 100">
+
+<div class="buttons">
+
+<button class="saque" onclick="sacar()">Saque</button>
+<button class="deposito" onclick="depositar()">Depósito</button>
+<button class="investimento" onclick="investir()">Investimento</button>
+<button class="atualizar" onclick="atualizarSaldo()">Atualizar</button>
+<button class="sair" onclick="sair()">Sair</button>
+
+</div>
+
+<div class="mensagem" id="mensagem">
+Bem-vindo ao sistema bancário.
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

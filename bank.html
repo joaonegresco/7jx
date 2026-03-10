@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco Simples</title>
+</head>
+<body>
+  <script>
+    let opcao = 0;
+    let saldo = 0;
+    let valor = 0;
+    let investimento = 0;
+
+    while (opcao !== 5) {
+      opcao = parseInt(prompt(
+        "🏦 Escolha:\n\n" +
+        "1. Saque\n" +
+        "2. Depósito\n" +
+        "3. Investimento\n" +
+        "4. Atualizar saldo\n" +
+        "5. Sair"
+      ));
+
+      switch (opcao) {
+        case 1:
+          valor = parseFloat(prompt("Digite o valor do saque:"));
+          saldo = saldo - valor;
+          alert("Saldo atual: " + saldo.toFixed(2));
+          break;
+
+        case 2:
+          valor = parseFloat(prompt("Digite o valor do depósito:"));
+          saldo = saldo + valor;
+          alert("Saldo atual: " + saldo.toFixed(2));
+          break;
+
+        case 3:
+          valor = parseFloat(prompt("Digite o valor do investimento:"));
+          saldo = saldo - valor;
+          investimento = valor * 0.2;
+          alert("Investimento realizado.\nSaldo atual: " + saldo.toFixed(2));
+          break;
+
+        case 4:
+          alert(
+            "🏧 Saldo Atualizado: " + saldo.toFixed(2) +
+            "\nInvestimento Atualizado: " + investimento.toFixed(2)
+          );
+          break;
+
+        case 5:
+          alert("Saindo...");
+          break;
+
+        default:
+          alert("Opção inválida.");
+      }
+    }
+  </script>
+</body>
+</html>
