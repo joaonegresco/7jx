@@ -1,0 +1,21 @@
+<head>
+<title>DOM</title>
+<body>
+<H1>Modelo DOC</H1>
+<a id="nav" href="index.html">Página Inicial</a>
+<img id="lampada1" src="lampada2.png"/>
+<button onclick="ligar()">Ligar</button>
+<button onclick="desligar()">Desligar</button>
+<script>
+function ligar()
+{
+document.getElementById('lampada1').src ='lampada2.png';
+}
+function desligar()
+{
+document.getElementById('lampada1').src = 'lampada1.png';
+}
+</script>
+</body>
+</head>
+</html>
