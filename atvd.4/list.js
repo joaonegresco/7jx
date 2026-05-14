@@ -42,8 +42,7 @@ console.log(temLaranja);
 
 console.log(temManga);
 
-// 2. Sets (Conjuntos)
-// 2.1 Adicionando duplicados
+
 const matriculas = new Set ([1001, 1002, 1005, 1009, 1002]);
 
 console.log([...matriculas]);
@@ -56,7 +55,8 @@ cores.add("Branco");
 cores.add("Preto");
 
 console.log([...cores]);
-// 2.3 Buscar se existe
+
+
 const temVerde = cores.has("Verde");
 
 const temAmarelo = cores.has("Amarelo");
@@ -64,15 +64,15 @@ const temAmarelo = cores.has("Amarelo");
 console.log(temVerde);
 
 console.log(temAmarelo);
-// 2.4 Converter array em set 
-const convidados = ["Bruno", "Henrique", "Juliana", 
-    "Carol", "Juliana", "Breno", "Henrique"];
+
+
+const convidados = ["JOAO", "VITORIA", "DUDA"];
+
 const convidados_unicos = new Set(convidados);
 
 console.log([...convidados_unicos]);
 
-// 3. Map (Mapas)
-// 3.1 Cadastro de Preços
+
 const produtos = new Map();
 
 produtos.set("Mouse", 50.00);
