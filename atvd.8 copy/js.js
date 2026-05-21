@@ -23,8 +23,8 @@ this.energia = energia;
 }    
 }
 
-let hero = new Personagem ("Vss7", "⬛ Venom", 100,100,0)
-let boss = new Personagem ("Rainha", "⬛ wolverine", 100,100,0)
+let hero = new Personagem ("Player 1", "⬛ Venom", 100,100,0)
+let boss = new Personagem ("Player 2", "⬛ wolverine", 100,100,0)
 
 document 
 .getElementById("nome-hero")
@@ -42,16 +42,19 @@ document
 .getElementById("titulo-boss")
 .textContent = boss.titulo;
 
-let ListaHabilididades =
+let containerBtn = document.getElementById("controles");
+
+
+let listaHabilidades =
 [
 new Habilidade (1, " Ataque ", 4, 0, 0),
-new Habilidade (1, " Skill ", 4, 0, 0),
-new Habilidade (1, " SuperPower ", 4, 0, 0)
+new Habilidade (2, " Skill ", 8, 10, 0),
+new Habilidade (3, " SuperPower ", 14, 0, 100)
 ];
-
-listaHabilidades.forEach(hab => 
-{
-let hab = document.createElement("button");
-btn.inerText = hab.nome;
+listaHabilidades.forEach(hab => {
+let btn = document.createElement("button");
+btn.innerText = hab.nome;
+console.log (containerBtn);
+containerBtn.appendChild(btn);
 }
-)
+);
