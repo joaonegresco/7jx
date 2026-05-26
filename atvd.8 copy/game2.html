@@ -19,7 +19,7 @@
                         <ul class="list-group float-end" style="width: 225px;">
                             <li class="list-group-item" id = "nome-hero"> Player 1 </li>
                             <li class="list-group-item" id = "titulo-hero"> Venom </li>
-                            <li class="list-group-item"> ❤️ <progress value=100 style="accent-color: rgb(180, 2, 2);">
+                            <li class="list-group-item"> ❤️ <progress id="hp-hero" value="100" max="100" style="accent-color: rgb(180, 2, 2);"></progress> </li>
                             <li class="list-group-item"> 🧪 <progress value=100 style="accent-color: rgb(3, 167, 17);">
                             <li class="list-group-item"> 💙 <progress value=100 style="accent-color: rgb(1, 16, 153);">
 
@@ -34,9 +34,8 @@
                         <div class="col">
                             <Ul class="list-group" style="width: 225px;">
                                 <li class="list-group-item" id = "nome-boss"> Player 2 </li>
-                                <li class="list-group-item" id = "titulo-boss"> Wolverine </li>
-                                <li class="list-group-item"> ❤️ <progress value=100
-                                        style="accent-color: rgb(180, 2, 2);">
+                                <li class="list-group-item" id = "titulo-boss"> Wolverine </li> 
+                                <li class="list-group-item"> ❤️ <progress id="hp-boss" value="100" max="100" style="accent-color: rgb(180, 2, 2);"></progress> </li>
                                 <li class="list-group-item"> 🧪 <progress value=100
                                         style="accent-color: rgb(3, 167, 17);">
                                 <li class="list-group-item"> 💙 <progress value=100
@@ -51,6 +50,7 @@
                     </div>
                 </div>
                 <div class="card-footer"> </div>
+                <div id = "controles" ></div>
             </div>
         </div>
         <div class="personagens">
@@ -68,7 +68,7 @@
         background-image: url("background.gif");
         background-size: cover;
         background-position: center;
-        background-attachment: fixed;
+        background-attachment: fixed; }
 
         .personagens {
             display: flex;
@@ -93,7 +93,6 @@
         .card-header {
             color: rgb(255, 0, 0)
         }
-    }
 </style>
 
 </html>
