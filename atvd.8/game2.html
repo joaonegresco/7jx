@@ -10,65 +10,124 @@
 
 
 <body>
- <div class="container">
- <div class="card">
- <div class="card-header"> By joao </div>
- <div class="card-body">
- <div class="row">
- <div class="col">
-  <ul class="list-group float-end" style="width: 225px;">
-   <li class="list-group-item"> Jxx7 </li>
-   <li class="list-group-item"> Rei </li>
-   <li class="list-group-item"> ❤️ <progress value=100 style="accent-color: rgb(180, 2, 2);"> 
-   <li class="list-group-item"> 🧪 <progress value=100 style="accent-color: rgb(3, 167, 17);">
-   <li class="list-group-item"> 💙 <progress value=100 style="accent-color: rgb(1, 16, 153);">
-   
-   </progress></li>
-   </progress></li> 
-   </progress></li>
+    <div class="container">
+        <div class="card">
+            <div class="card-header"> By joao </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <ul class="list-group float-end" style="width: 225px;">
+                            <li class="list-group-item" id="nome-hero"> Player 1 </li>
+                            <li class="list-group-item" id="titulo-hero"> Venom </li>
+                            <li class="list-group-item"> ❤️ <progress id="hp-hero" value="100" max="100"
+                                    style="accent-color: rgb(180, 2, 2);"></progress> </li>
+                            <li class="list-group-item">
+                                🧪 <progress id="mana-hero" value="100" max="100"
+                                    style="accent-color: rgb(3, 167, 17);"></progress>
+                            </li>
+                            <li class="list-group-item">
+                                💙 <progress id="energia-hero" value="100" max="100"
+                                    style="accent-color: rgb(1, 16, 153);"></progress>
+                            </li>
 
-  </li>
-  </ul>
-  </div>
-  <div class="col">
-  <div class="col">
-   <Ul class="list-group" style="width: 225px;">
-    <li class="list-group-item"> Vss7 </li>
-    <li class="list-group-item"> Rainha </li>
-    <li class="list-group-item"> ❤️ <progress value=100 style="accent-color: rgb(180, 2, 2);"> <!---->
-    <li class="list-group-item"> 🧪 <progress value=100 style="accent-color: rgb(3, 167, 17);"> 
-    <li class="list-group-item"> 💙 <progress value=100 style="accent-color: rgb(1, 16, 153);"> 
+                            </progress></li>
+                            </progress></li>
+                            </progress></li>
 
-     </progress></li>
-     </progress></li>
-     </progress></li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <div class="col">
+                            <Ul class="list-group" style="width: 225px;">
+                                <li class="list-group-item" id="nome-boss"> Player 2 </li>
+                                <li class="list-group-item" id="titulo-boss"> Wolverine </li>
+                                <li class="list-group-item"> ❤️ <progress id="hp-boss" value="100" max="100"
+                                        style="accent-color: rgb(180, 2, 2);"></progress> </li>
+                                <li class="list-group-item"> 🧪 <progress value=100
+                                        style="accent-color: rgb(3, 167, 17);">
+                                <li class="list-group-item"> 💙 <progress value=100
+                                        style="accent-color: rgb(1, 16, 153);">
 
- </Ul>
- </div>
- </div>
- </div>
- <div class="card-footer"> </div>
- </div>
- </div>
+                                    </progress></li>
+                                </progress></li>
+                                </progress></li>
 
- <img src="vnm.gif" class="personagem" style="float: left; width: 400px; height: 400px;">
- <img src="vnm2.gif" class="personagem" style="float: left; width: 400px; height: 400px;">
+                            </Ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer"> </div>
+                <div id="controles"></div>
+            </div>
+        </div>
+        <div class="personagens">
+            <img src="vnm.gif" class="personagem">
+            <img src="vnm2.gif" class="personagem">
 
+        </div>
+        <div id="tela-vitoria" class="tela-vitoria">
+            <div class="caixa-vitoria">
+                <img src="MOGAR.png" class="imagem-vitoria" alt="Vitória">
+                <button class="btn btn-danger mt-3" onclick="reiniciarJogo()">Jogar novamente</button>
+            </div>
+        </div>
+    </div>
+    <script src="js.js"> </script>
 
 
 </body>
 
 <style>
+    body {
+        background-image: url("background.gif");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
 
+    .personagens {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        margin-top: 225px;
+    }
 
-body 
-{
-background-image: url("background.gif");
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-}
+    .personagem {
+        width: 400px;
+        height: 400px;
+    }
 
+    .card {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        border-radius: 20px;
+        margin-top: 5px;
+    }
+
+    .card-header {
+        color: rgb(255, 0, 0)
+    }
+
+    .tela-vitoria {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 999;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .caixa-vitoria {
+        text-align: center;
+    }
+
+    .imagem-vitoria {
+        width: 400px;
+        max-width: 90vw;
+    }
 </style>
 
 </html>
