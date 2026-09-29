@@ -1,3 +1,3 @@
 import mysql.connector
 
-def conectar():
+def conectar();
