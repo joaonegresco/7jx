@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minha Playlist</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;padding:8px 8px 100px;display:grid;grid-template-columns:230px 1fr;gap:8px;min-height:100vh}
+.sidebar,.main{border-radius:9px;background:#121212}.sidebar{padding:25px 15px}.brand{font-size:24px;font-weight:800;margin:0 8px 32px}.brand-mark{display:inline-grid;place-items:center;background:#1ed760;color:#000;border-radius:50%;width:27px;height:27px;margin-right:7px}
+.nav a{display:block;padding:11px 9px;color:#b3b3b3;text-decoration:none;font-weight:bold}.nav a:hover{color:#fff}.library{margin:30px 8px 16px;color:#b3b3b3;font-weight:bold}.mini{display:flex;gap:11px;align-items:center;padding:9px;background:#242424;border-radius:5px}.mini-art{background:linear-gradient(135deg,#8b68c7,#222);width:44px;height:44px;display:grid;place-items:center;font-size:25px}.mini small{display:block;color:#b3b3b3;margin-top:5px}.note{color:#888;font-size:12px;line-height:1.5;margin:22px 8px}
+.main{overflow:hidden;padding:20px 28px 30px;background:linear-gradient(180deg,#514268 0,#27212e 280px,#121212 440px)}.top{display:flex;align-items:center;gap:8px}.round{border:0;border-radius:50%;background:#0008;color:white;font-size:25px;width:34px;height:34px}.spotify{margin-left:auto;background:white;color:#111;border-radius:22px;padding:10px 16px;text-decoration:none;font-size:13px;font-weight:bold}
+.hero{display:flex;align-items:end;gap:22px;padding:48px 0 28px}.cover-big{width:180px;height:180px;flex-shrink:0;display:grid;place-items:center;background:linear-gradient(135deg,#9375c9,#242036);font-size:90px;box-shadow:0 8px 25px #0005}.eyebrow{font-size:11px;font-weight:bold}.hero h1{font-size:clamp(34px,5vw,70px);letter-spacing:-2px;margin:10px 0}.hero p{color:#ddd;margin:0 0 12px}.count{font-size:12px;font-weight:bold}
+.heading,.track{display:grid;grid-template-columns:35px minmax(140px,1.7fr) minmax(100px,1fr) 80px;align-items:center;gap:12px}.heading{padding:10px 12px;border-bottom:1px solid #ffffff30;color:#b3b3b3;font-size:12px}.track{padding:10px 12px;min-height:65px;border-radius:5px;color:#b3b3b3;font-size:13px}.track:hover,.track.selected{background:#ffffff17}.num{text-align:center}.track-title{display:flex;align-items:center;gap:12px;min-width:0}.track-title img{width:44px;height:44px;object-fit:cover;background:#333;border-radius:3px}.track-title b,.track-title small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.track-title b{color:white;font-size:14px;font-weight:500}.track-title small{margin-top:5px;font-size:12px}.artist{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.listen{justify-self:end;border:1px solid #777;background:transparent;color:white;border-radius:20px;padding:7px 11px;font-weight:bold;cursor:pointer}.listen:hover{border-color:white}
+.player{position:fixed;bottom:0;left:0;right:0;height:88px;background:#181818;border-top:1px solid #282828;display:grid;grid-template-columns:1fr 1.2fr 1fr;align-items:center;padding:0 22px;gap:16px}.now{display:flex;align-items:center;gap:12px;min-width:0}.now-art{width:52px;height:52px;background:#302840;display:grid;place-items:center;font-size:23px;flex-shrink:0}.now-art img{width:100%;height:100%;object-fit:cover}.now b,.now small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.now b{font-size:13px}.now small{font-size:11px;color:#b3b3b3;margin-top:6px}.controls{text-align:center}.controls button{border:0;background:none;color:#aaa;font-size:18px;cursor:pointer}.controls .play{background:white;color:#111;width:35px;height:35px;border-radius:50%;margin:0 12px;font-size:15px}.hint{font-size:10px;color:#aaa;margin-top:6px}.volume{display:flex;justify-content:end;align-items:center;gap:9px;color:#aaa}.volume-line{width:85px;height:4px;border-radius:4px;background:#666}.volume-line span{display:block;width:65%;height:100%;background:#ddd;border-radius:4px}
+@media(max-width:720px){body{display:block;padding:5px 5px 100px}.sidebar{display:none}.main{padding:14px}.hero{padding:32px 0 20px;align-items:center;gap:14px}.cover-big{width:105px;height:105px;font-size:55px}.hero h1{font-size:32px;letter-spacing:-1px}.hero p{font-size:12px}.artist,.heading .artist-label{display:none}.heading,.track{grid-template-columns:24px minmax(120px,1fr) 65px;gap:7px}.player{grid-template-columns:1fr auto;padding:0 9px;gap:8px}.volume{display:none}.now-art{width:42px;height:42px}.now b{max-width:125px}.controls{grid-column:2}.hint{max-width:150px;font-size:9px}}
+</style>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><span class="brand-mark">●</span> musicfy</div>
+  <nav class="nav"><a href="#">⌂ &nbsp; Início</a><a href="#playlist">⌕ &nbsp; Buscar músicas</a></nav>
+  <div class="library">▤ &nbsp; Sua biblioteca</div>
+  <div class="mini"><div class="mini-art">♫</div><div><b>Minha Playlist</b><small>Playlist • 5 músicas</small></div></div>
+  <p class="note">Escolha uma música e clique em “Ouvir” para abrir a busca no Spotify.</p>
+</aside>
+<main class="main" id="playlist">
+  <header class="top"><button class="round" aria-label="Voltar">‹</button><button class="round" aria-label="Avançar">›</button><a class="spotify" href="https://open.spotify.com/" target="_blank" rel="noopener">Abrir Spotify ↗</a></header>
+  <section class="hero"><div class="cover-big">♫</div><div><div class="eyebrow">PLAYLIST PÚBLICA</div><h1>Minha Playlist</h1><p>Suas músicas favoritas em um só lugar.</p><span class="count">5 músicas</span></div></section>
+  <section><div class="heading"><span>#</span><span>Título</span><span class="artist-label">Artista</span><span>Ouvir</span></div><div id="Musicas"></div></section>
+</main>
+<footer class="player">
+  <div class="now"><div class="now-art" id="nowArt">♫</div><div><b id="nowTitle">Escolha uma música</b><small id="nowArtist">Sua playlist</small></div></div>
+  <div class="controls"><button disabled>⏮</button><button class="play" id="playButton">▶</button><button disabled>⏭</button><div class="hint" id="hint">Selecione uma faixa para começar</div></div>
+  <div class="volume">♫ <div class="volume-line"><span></span></div></div>
+</footer>
+<script>
+const musicas=[
+ {nome:'Fênix',artista:'MC Kevin',imagem:'https://i.scdn.co/image/ab67616d0000b2736af0dbb312f05bd06f927f73'},
+ {nome:'PLUG',artista:'MC GW',imagem:'https://i.ytimg.com/vi/Na5fFduQ62M/maxresdefault.jpg'},
+ {nome:'3S',artista:'Ryu The Runner ft. Enzo',imagem:'https://i.scdn.co/image/ab67616d0000b273010c8f1c844abf0e172962e9'},
+ {nome:'VOCE&EU',artista:'MC Cabelinho',imagem:'https://portalrapmais.com/wp-content/uploads/2023/04/contracapa-mc-cabelinho-little-love-deluxe.jpg'},
+ {nome:'Da Lua',artista:'DJONGA ft. Veigh',imagem:'https://bhaz.com.br/wp-content/uploads/2023/10/386321113_324823253569321_9085721334688118311_n-fotor-20231008175212-1024x936.jpg'}
+];
+const lista=document.getElementById('Musicas');let selecionada=null;
+function spotifyUrl(m){return 'https://open.spotify.com/search/'+encodeURIComponent(m.nome+' '+m.artista)}
+musicas.forEach((m,i)=>{
+ const row=document.createElement('div');row.className='track';
+ row.innerHTML='<span class="num">'+(i+1)+'</span><div class="track-title"><img alt=""><div><b></b><small></small></div></div><span class="artist"></span><button class="listen">Ouvir ↗</button>';
+ row.querySelector('img').src=m.imagem;row.querySelector('img').onerror=function(){this.style.visibility='hidden'};
+ row.querySelector('b').textContent=m.nome;row.querySelector('small').textContent=m.artista;row.querySelector('.artist').textContent=m.artista;
+ row.addEventListener('click',()=>selecionar(m,row));
+ row.querySelector('.listen').addEventListener('click',e=>{e.stopPropagation();selecionar(m,row);window.open(spotifyUrl(m),'_blank','noopener')});
+ lista.appendChild(row);
+});
+function selecionar(m,row){document.querySelectorAll('.track').forEach(x=>x.classList.remove('selected'));row.classList.add('selected');selecionada=m;document.getElementById('nowTitle').textContent=m.nome;document.getElementById('nowArtist').textContent=m.artista;document.getElementById('nowArt').innerHTML='<img alt="" src="'+m.imagem+'">';document.getElementById('hint').textContent='Clique em ▶ para abrir no Spotify';}
+document.getElementById('playButton').addEventListener('click',()=>{if(!selecionada){document.getElementById('hint').textContent='Primeiro, escolha uma música na lista.';return}window.open(spotifyUrl(selecionada),'_blank','noopener')});
+</script>
+</body>
+</html>
